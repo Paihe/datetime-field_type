@@ -217,7 +217,7 @@ class DatetimeFieldType extends FieldType
         }
 
         $value = (new Carbon())->createFromFormat(
-            str_replace(':s', '', $this->getStorageFormat()),
+            $this->getStorageFormat(),
             $value,
             $this->configuration->get('streams::datetime.database_timezone')
         );
